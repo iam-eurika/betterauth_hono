@@ -12,13 +12,11 @@ export const auth = betterAuth({
     expo()
   ],
   trustedOrigins: ["schedula://",
-    ...(process.env.NODE_ENV === "development" ? [
-      "exp://",
-      "exp://**/**",
-      "exp://192.168.*.*:*/**",
-    ] : []),
-  ],
 
+    "exp://",
+    "exp://**/**",
+    "exp://192.168.*.*:*/**",
+  ],
   secret: process.env.BETTER_AUTH_SECRET,
   url: process.env.BETTER_AUTH_URL,
   socialProviders: {

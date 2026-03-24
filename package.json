@@ -1,0 +1,19 @@
+{
+  "name": "schedula-better-auth",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.11",
+    "better-auth": "^1.5.6",
+    "hono": "^4.12.9",
+    "pg": "^8.20.0"
+  }
+}

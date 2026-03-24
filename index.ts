@@ -8,4 +8,7 @@ app.use(cors());
 
 app.on(["POST", "GET"], "/api/auth/*", (c) => auth.handler(c.req.raw));
 
-serve(app);
+export default{
+    port: 3000,
+    fetch: app.fetch,
+};

@@ -1,5 +1,5 @@
 import { expo } from "@better-auth/expo";
-import { betterAuth } from "better-auth";
+import { betterAuth, url } from "better-auth";
 import { Pool } from "pg";
 
 const pool = new Pool({
@@ -8,13 +8,21 @@ const pool = new Pool({
 
 export const auth = betterAuth({
   database: pool,
-  plugins:[
+  plugins: [
     expo()
   ],
+  trustedOrigins: ["schedula://",
+    ...(process.env.NODE_ENV === "development" ? [
+      "exp://",
+      "exp://**",
+      "exp://192.168.*.*:*/**",
+    ] : []),
+  ],
+
   secret: process.env.BETTER_AUTH_SECRET,
   url: process.env.BETTER_AUTH_URL,
-  socialProviders:{
-    google:{
+  socialProviders: {
+    google: {
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     },

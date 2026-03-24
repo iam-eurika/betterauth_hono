@@ -1,3 +1,4 @@
+import { expo } from "@better-auth/expo";
 import { betterAuth } from "better-auth";
 import { Pool } from "pg";
 
@@ -7,6 +8,9 @@ const pool = new Pool({
 
 export const auth = betterAuth({
   database: pool,
+  plugins:[
+    expo()
+  ],
   secret: process.env.BETTER_AUTH_SECRET,
   url: process.env.BETTER_AUTH_URL,
   socialProviders:{

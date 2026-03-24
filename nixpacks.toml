@@ -17,4 +17,4 @@ cmds = [
 ]
 
 [start]
-cmd = "bun run start"%   
+cmd = "bun run start"

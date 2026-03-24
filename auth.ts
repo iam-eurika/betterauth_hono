@@ -14,7 +14,7 @@ export const auth = betterAuth({
   trustedOrigins: ["schedula://",
     ...(process.env.NODE_ENV === "development" ? [
       "exp://",
-      "exp://**",
+      "exp://**/**",
       "exp://192.168.*.*:*/**",
     ] : []),
   ],

@@ -15,6 +15,7 @@ export const auth = betterAuth({
 
     "exp://",
     "exp://**/**",
+    "schedulabeta://",
     "exp://192.168.*.*:*/**",
   ],
   secret: process.env.BETTER_AUTH_SECRET,
